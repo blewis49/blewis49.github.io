@@ -1,4 +1,4 @@
-# Week 3 Assignment: Plotly -----------------------------------------------
+# Week 3 Assignment: Plotly ----------------------------------------------
 library(RCurl)
 library(tidyverse)
 library(plotly)
