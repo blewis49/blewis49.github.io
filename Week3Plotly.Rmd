@@ -1,0 +1,27 @@
+---
+title: "Week 3 Plotly Assignment"
+author: "William Lewis"
+date: "10/21/2018"
+output: ioslides_presentation
+---
+
+```{r setup, echo=FALSE, message=FALSE }
+# Create a presentation using Plotly that depicts an interactive chart with data
+library(RCurl)
+library(tidyverse)
+library(plotly)
+grads <- read.csv(text = getURL("https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2018-10-16/recent-grads.csv"), header = TRUE)
+x <- list(title = "Source: American Community Survey 2010-2012 Public Use Microdata Series", size = 8)
+```
+
+## Higher Education Earnings by Major - October 21, 2018
+
+```{r grads, comment=FALSE, message=FALSE, echo = FALSE, warning=FALSE}
+grads %>% 
+        select(Major_category, Total, Median, P25th, P75th) %>% 
+        arrange(Median) %>% 
+        plot_ly(x = ~Median, color = ~Major_category, type = "box") %>% 
+        layout(xaxis = x, showlegend = FALSE, 
+               title = "Median Earnings by Major Category (Dollars)")
+```
+

@@ -18,7 +18,7 @@ grads %>%
         arrange(Median) %>% 
         plot_ly(x = ~Median, color = ~Major_category, type = "box") %>% 
         layout(xaxis = x, showlegend = FALSE, 
-               title = "18 Oct 2018: Median Earnings by Major Category (Dollars)") 
+               title = "Median Earnings by Major Category (Dollars)") 
 
 
 
