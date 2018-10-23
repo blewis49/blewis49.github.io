@@ -15,25 +15,24 @@ source: https://en.wikipedia.org/wiki/Regression_analysis
 
 The Model
 ========================================================
-
+This Shiny App allows a user to select the father's height in inches using a slider bar to determine the mean son's height.
 ```{r}
 library(UsingR)
 data("father.son")
 mod1 <- lm(sheight ~ fheight, data = father.son)
+pred <- predict(mod1, newdata = data.frame(fheight = 72))
 ```
 
 Best Fit line 
 ========================================================
-
+The mean son's height is depicted along the red line as a blue dot.
 ```{r, echo=FALSE}
 with(father.son, plot(fheight, sheight))
 abline(mod1, col = "red")
+points(72, pred, col = "blue", pch = 16, cex = 2)
 ```
 
 Conclusion 
 ========================================================
-
-```{r}
-
-```
+This simple Shiny app illustrates simple linear regression interactively with a user.
 
