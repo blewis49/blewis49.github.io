@@ -16,7 +16,10 @@ shinyServer(function(input, output) {
         model1pred <- reactive({
                 HTInput <- input$sliderHT
                 predict(model1, newdata = data.frame(fheight = HTInput))
-        })       
+        })     
+        output$instructions <- renderText({
+              print("Use the slider bar to the left to select a height in inches of a father's height. The resulting son's height is represented on the graph below by the blue dot and the value is displayed below the graph. By checking the box to the left, you may show or hide the red line that depicts the best fit line containing son's mean height based on a father's height. This application uses the father.son dataset from the UsingR package.")
+        })
         output$plot1 <- renderPlot({
                 HTInput <- input$sliderHT
                 plot(father.son$fheight, father.son$sheight, xlab = "Father's Height", 

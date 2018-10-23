@@ -19,6 +19,8 @@ shinyUI(fluidPage(
                         
                 ),
                 mainPanel(
+                        h2("Documentation:"),
+                        textOutput("instructions"),
                         plotOutput("plot1"),
                         h3("Predicted Son's Height from Model:"),
                         textOutput("pred1")

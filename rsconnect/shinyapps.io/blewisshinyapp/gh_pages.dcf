@@ -1,0 +1,10 @@
+name: gh_pages
+title:
+username:
+account: blewisshinyapp
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 530297
+bundleId: 1657961
+url: https://blewisshinyapp.shinyapps.io/gh_pages/
+when: 1540302653.3143
